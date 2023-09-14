@@ -1,0 +1,54 @@
+body{
+        background: linear-gradient(85deg, rgb(34,193,195), rgb(121, 32, 153));
+        background-attachment: fixed;
+        font-family: monospace;
+}
+form{
+        width: 400px;
+        margin: 20vh auto;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        padding: 30px;
+}
+h1{
+        text-align: center;
+        color: #792099;
+}
+form button{
+        background-color: #792099;
+        color: white;
+        border: 1px solid #792099;
+        padding: 10px;
+        margin: 20px 0px;
+        cursor: pointer;
+        font-size: 20px;
+        width: 100%;
+}
+label{
+        font-size: large;
+        
+}
+input{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        width: 100%;
+        height: 25px;
+}
+#invUser{
+        display: none;
+        color: red;
+}
+
+#invPass{
+        display: none;
+        color: red;
+}
+#invPass2{
+        display: none;
+        color: red;
+}
+#shortPass{
+        display: none;
+        color: red;
+}

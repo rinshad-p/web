@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Challenge 4</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="container">
+            <form action="login.html" onsubmit="return validate()">
+                <h1>Register</h1>
+                <label for="uname">Username</label>
+                <label for="invUser" id="invUser">Invalid Username</label>
+                <input type="text" name="uname" id="uname" placeholder="Enter Username">
+
+                
+                <label for="password">Password</label>
+                <label for="invPass" id="invPass">Invalid Password</label>
+                <label for="shortPass" id="shortPass">Password is too short (minimum 8 characters)</label>
+                <input type="password" name="password" id="password" placeholder="Enter Password">
+                <label for="password2">Repeat Password</label>
+
+                <input type="password" name="password2" id="password2" placeholder="Repeat Password">
+                <label for="invPass" id="invPass2">Password Does Not Match</label><br>
+                <button type="submit" onclick="validate()">Submit</button>
+            </form>
+        </div>
+    
+        <script>
+            function validate() {
+                let username = document.getElementById('uname');
+                let password = document.getElementById('password');
+                let password2 = document.getElementById('password2')
+                let invUser = document.getElementById('invUser');
+                let invPass = document.getElementById('invPass');
+                let invPass2 = document.getElementById('invPass2');
+                let shortPass = document.getElementById('shortPass');
+    
+                if (username.value.trim() === "") {
+                    username.style.border = "1px solid red";
+                    invUser.style.display = "inline";
+                    return false;
+                }
+                else {
+                    username.style.border = "1px solid #ccc";
+                    invUser.style.display = "none";
+                }
+    
+                if (password.value.trim() === "") {
+                    password.style.border = "1px solid red";
+                    invPass.style.display = "inline";
+                    return false;
+                }
+                else {
+                    password.style.border = "1px solid #ccc";
+                    invPass.style.display = "none";
+                }
+    
+                if (password.value.trim().length < 8) {
+                    password.style.border = "1px solid red";
+                    shortPass.style.display = "inline";
+                    return false;
+                }
+                else {
+                    password.style.border = "1px solid #ccc";
+                    invPass.style.display = "none";
+                    shortPass.style.display ="none";
+                }
+                
+                if(password.value!=password2.value)
+                {
+                    password.style.border = "1px solid red";
+                    password2.style.border = "1px solid red";
+                    invPass2.style.display = "inline";
+                    return false;
+                }
+                else{
+                        return true
+                }
+               
+            }
+        </script>
+    </body>
+</html>
